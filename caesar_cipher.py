@@ -52,7 +52,7 @@ def main():
         while True:
             choice = get_valid_choice()
             if choice == 'q':
-                print(Fore.GREEN + "Goodbye!" + Style.RESET_ALL)
+                print(Fore.GREEN + "Goodbye!\n" + Style.RESET_ALL)
                 break
             message = input(Fore.YELLOW + "Enter your message: " + Style.RESET_ALL)
             shift = get_valid_shift()
@@ -65,7 +65,7 @@ def main():
 
             continue_choice = get_continue_choice()
             if continue_choice == 'n':
-                print(Fore.GREEN + "Goodbye!" + Style.RESET_ALL)
+                print(Fore.GREEN + "Goodbye!\n" + Style.RESET_ALL)
                 break
     except KeyboardInterrupt:
         print(Fore.GREEN + "Goodbye!\n" + Style.RESET_ALL)
