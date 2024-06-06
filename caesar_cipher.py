@@ -1,3 +1,8 @@
+import colorama
+from colorama import Fore, Style
+
+colorama.init(autoreset=True)
+
 def encrypt(text, shift):
     result = ""
     for char in text:
@@ -15,44 +20,52 @@ def decrypt(text, shift):
 def get_valid_shift():
     while True:
         try:
-            shift = int(input("Enter shift value: "))
+            shift = int(input(Fore.YELLOW + "Enter shift value: " + Style.RESET_ALL))
             return shift
         except ValueError:
-            print("Invalid input. Please enter an integer value.")
+            print(Fore.RED + "Invalid input. Please enter an integer value.")
 
 def get_valid_choice():
     while True:
-        choice = input("Would you like to encrypt or decrypt a message? (e/d) or 'q' to quit: ").lower()
+        choice = input(Fore.CYAN + "Would you like to encrypt or decrypt a message? (e/d) or 'q' to quit: " + Style.RESET_ALL).lower()
         if choice in ['e', 'd', 'q']:
             return choice
-        print("Invalid choice. Please enter 'e' to encrypt, 'd' to decrypt, or 'q' to quit.")
+        print(Fore.RED + "Invalid choice. Please enter 'e' to encrypt, 'd' to decrypt, or 'q' to quit.")
 
 def get_continue_choice():
     while True:
-        choice = input("Would you like to perform another action? (y/n): ").lower()
+        choice = input(Fore.CYAN + "Would you like to perform another action? (y/n): " + Style.RESET_ALL).lower()
         if choice in ['y', 'n']:
             return choice
-        print("Invalid choice. Please enter 'y' to continue or 'n' to quit.")
+        print(Fore.RED + "Invalid choice. Please enter 'y' to continue or 'n' to quit.")
 
 def main():
-    print("Welcome to the Caesar Cipher Program")
+    print(Fore.GREEN + Style.BRIGHT + """
+  ____                     _____ _       _             
+ / ___|__ _ ___  ___  ___ |  ___(_)_ __ | | _____ _ __ 
+| |   / _` / __|/ _ \/ __|| |_  | | '_ \| |/ / _ \ '__|
+| |__| (_| \__ \  __/\__ \|  _| | | | | |   <  __/ |   
+ \____\__,_|___/\___||___/|_|   |_|_| |_|_|\_\___|_|   
+                                                       
+    """ + Style.RESET_ALL)
+    print(Fore.GREEN + "Welcome to the Caesar Cipher Program" + Style.RESET_ALL)
     while True:
         choice = get_valid_choice()
         if choice == 'q':
-            print("Goodbye!")
+            print(Fore.GREEN + "Goodbye!" + Style.RESET_ALL)
             break
-        message = input("Enter your message: ")
+        message = input(Fore.YELLOW + "Enter your message: " + Style.RESET_ALL)
         shift = get_valid_shift()
         if choice == 'e':
             encrypted_message = encrypt(message, shift)
-            print(f"Encrypted message: {encrypted_message}")
+            print(Fore.GREEN + f"Encrypted message: {encrypted_message}" + Style.RESET_ALL)
         elif choice == 'd':
             decrypted_message = decrypt(message, shift)
-            print(f"Decrypted message: {decrypted_message}")
+            print(Fore.GREEN + f"Decrypted message: {decrypted_message}" + Style.RESET_ALL)
 
         continue_choice = get_continue_choice()
         if continue_choice == 'n':
-            print("Goodbye!")
+            print(Fore.GREEN + "Goodbye!" + Style.RESET_ALL)
             break
 
 if __name__ == "__main__":
