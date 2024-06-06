@@ -1,6 +1,5 @@
 import colorama
 from colorama import Fore, Style
-from art import *
 
 colorama.init(autoreset=True)
 
@@ -41,9 +40,14 @@ def get_continue_choice():
         print(Fore.RED + "Invalid choice. Please enter 'y' to continue or 'n' to quit.")
 
 def main():
-    text = "CAESAR CIPHER"
-    ascii_art = text2art(text)
-    print(ascii_art)
+    print(Fore.GREEN + Style.BRIGHT + """
+  ____     _     _____  ____      _     ____     ____  ___  ____   _   _  _____  ____  
+ / ___|   / \   | ____|/ ___|    / \   |  _ \   / ___||_ _||  _ \ | | | || ____||  _ \
+| |      / _ \  |  _|  \___ \   / _ \  | |_) | | |     | | | |_) || |_| ||  _|  | |_) |
+| |___  / ___ \ | |___  ___) | / ___ \ |  _ <  | |___  | | |  __/ |  _  || |___ |  _ <
+ \____|/_/   \_\|_____||____/ /_/   \_\|_| \_\  \____||___||_|    |_| |_||_____||_| \_\
+
+    """ + Style.RESET_ALL)
     print(Fore.GREEN + "Welcome to the Caesar Cipher Program" + Style.RESET_ALL)
     while True:
         choice = get_valid_choice()
