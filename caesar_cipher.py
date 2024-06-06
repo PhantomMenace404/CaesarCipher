@@ -40,33 +40,35 @@ def get_continue_choice():
         print(Fore.RED + "Invalid choice. Please enter 'y' to continue or 'n' to quit.")
 
 def main():
-    print(Fore.GREEN + Style.BRIGHT + """
+    try:
+        print(Fore.GREEN + Style.BRIGHT + """
   ____     _     _____  ____      _     ____     ____  ___  ____   _   _  _____  ____  
  / ___|   / \\   | ____|/ ___|    / \\   |  _ \\   / ___||_ _||  _ \\ | | | || ____||  _ \\
 | |      / _ \\  |  _|  \\___ \\   / _ \\  | |_) | | |     | | | |_) || |_| ||  _|  | |_) |
 | |___  / ___ \\ | |___  ___) | / ___ \\ |  _ <  | |___  | | |  __/ |  _  || |___ |  _ <
  \\____|/_/   \\_\\|_____||____/ /_/   \\_\\|_| \\_\\  \\____||___||_|    |_| |_||_____||_| \\_
 """ + Style.RESET_ALL)
-    print(Fore.GREEN + "Welcome to the Caesar Cipher Program" + Style.RESET_ALL)
-    while True:
-        choice = get_valid_choice()
-        if choice == 'q':
-            print(Fore.GREEN + "Goodbye!" + Style.RESET_ALL)
-            break
-        message = input(Fore.YELLOW + "Enter your message: " + Style.RESET_ALL)
-        shift = get_valid_shift()
-        if choice == 'e':
-            encrypted_message = encrypt(message, shift)
-            print(Fore.GREEN + f"Encrypted message: {encrypted_message}" + Style.RESET_ALL)
-        elif choice == 'd':
-            decrypted_message = decrypt(message, shift)
-            print(Fore.GREEN + f"Decrypted message: {decrypted_message}" + Style.RESET_ALL)
+        print(Fore.GREEN + "Welcome to the Caesar Cipher Program" + Style.RESET_ALL)
+        while True:
+            choice = get_valid_choice()
+            if choice == 'q':
+                print(Fore.GREEN + "Goodbye!" + Style.RESET_ALL)
+                break
+            message = input(Fore.YELLOW + "Enter your message: " + Style.RESET_ALL)
+            shift = get_valid_shift()
+            if choice == 'e':
+                encrypted_message = encrypt(message, shift)
+                print(Fore.GREEN + f"Encrypted message: {encrypted_message}" + Style.RESET_ALL)
+            elif choice == 'd':
+                decrypted_message = decrypt(message, shift)
+                print(Fore.GREEN + f"Decrypted message: {decrypted_message}" + Style.RESET_ALL)
 
-        continue_choice = get_continue_choice()
-        if continue_choice == 'n':
-            print(Fore.GREEN + "Goodbye!" + Style.RESET_ALL)
-            break
+            continue_choice = get_continue_choice()
+            if continue_choice == 'n':
+                print(Fore.GREEN + "Goodbye!" + Style.RESET_ALL)
+                break
+    except KeyboardInterrupt:
+        print(Fore.GREEN + "Goodbye!" + Style.RESET_ALL)
 
 if __name__ == "__main__":
     main()
-
