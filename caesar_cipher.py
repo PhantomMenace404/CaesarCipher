@@ -68,7 +68,7 @@ def main():
                 print(Fore.GREEN + "Goodbye!" + Style.RESET_ALL)
                 break
     except KeyboardInterrupt:
-        print(Fore.GREEN + "Goodbye!" + Style.RESET_ALL)
+        print(Fore.GREEN + "Goodbye!\n" + Style.RESET_ALL)
 
 if __name__ == "__main__":
     main()
