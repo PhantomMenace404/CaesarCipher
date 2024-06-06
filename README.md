@@ -10,6 +10,12 @@ This is a simple Python program that encrypts and decrypts text using the Caesar
 - Handles both uppercase and lowercase letters.
 - Ignores non-alphabetic characters during encryption/decryption.
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Example](#example)
+
 ## Prerequisites
 
 - Python 3.x: This program requires Python version 3.x. You can check your Python version by running `python --version` or `python3 --version` in your terminal. If you do not have Python 3.x installed, you can download it from the [official Python website](https://www.python.org/downloads/).
@@ -38,17 +44,27 @@ This is a simple Python program that encrypts and decrypts text using the Caesar
 ### Example
 
 ```plaintext
+  ____     _     _____  ____      _     ____     ____  ___  ____   _   _  _____  ____  
+ / ___|   / \   | ____|/ ___|    / \   |  _ \   / ___||_ _||  _ \ | | | || ____||  _ \
+| |      / _ \  |  _|  \___ \   / _ \  | |_) | | |     | | | |_) || |_| ||  _|  | |_) |
+| |___  / ___ \ | |___  ___) | / ___ \ |  _ <  | |___  | | |  __/ |  _  || |___ |  _ <
+ \____|/_/   \_\|_____||____/ /_/   \_\|_| \_\  \____||___||_|    |_| |_||_____||_| \_\
+
 Welcome to the Caesar Cipher Program
+
 Would you like to encrypt or decrypt a message? (e/d) or 'q' to quit: e
-Enter your message: Hello, World!
+Enter your message: Hello
 Enter shift value: 3
-Encrypted message: Khoor, Zruog!
+Encrypted message: Khoor
+
+Would you like to perform another action? (y/n): y
 
 Would you like to encrypt or decrypt a message? (e/d) or 'q' to quit: d
-Enter your message: Khoor, Zruog!
+Enter your message: Khoor
 Enter shift value: 3
-Decrypted message: Hello, World!
+Decrypted message: Hello
 
-Would you like to encrypt or decrypt a message? (e/d) or 'q' to quit: q
+Would you like to perform another action? (y/n): n
+
 Goodbye!
 
