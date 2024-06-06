@@ -12,7 +12,7 @@ This is a simple Python program that encrypts and decrypts text using the Caesar
 
 ## Prerequisites
 
-- Python 3.x
+- Python 3.x: This program requires Python version 3.x. You can check your Python version by running `python --version` or `python3 --version` in your terminal. If you do not have Python 3.x installed, you can download it from the [official Python website](https://www.python.org/downloads/).
 
 ## Installation
 
