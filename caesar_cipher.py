@@ -27,6 +27,13 @@ def get_valid_choice():
             return choice
         print("Invalid choice. Please enter 'e' to encrypt, 'd' to decrypt, or 'q' to quit.")
 
+def get_continue_choice():
+    while True:
+        choice = input("Would you like to perform another action? (y/n): ").lower()
+        if choice in ['y', 'n']:
+            return choice
+        print("Invalid choice. Please enter 'y' to continue or 'n' to quit.")
+
 def main():
     print("Welcome to the Caesar Cipher Program")
     while True:
@@ -42,6 +49,11 @@ def main():
         elif choice == 'd':
             decrypted_message = decrypt(message, shift)
             print(f"Decrypted message: {decrypted_message}")
+
+        continue_choice = get_continue_choice()
+        if continue_choice == 'n':
+            print("Goodbye!")
+            break
 
 if __name__ == "__main__":
     main()
