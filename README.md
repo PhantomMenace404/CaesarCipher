@@ -1,4 +1,3 @@
-# PRODIGY_CS_01
 # Caesar Cipher
 
 This is a simple Python program that encrypts and decrypts text using the Caesar Cipher algorithm. The Caesar Cipher is a type of substitution cipher where each letter in the plaintext is shifted a certain number of places down or up the alphabet.
